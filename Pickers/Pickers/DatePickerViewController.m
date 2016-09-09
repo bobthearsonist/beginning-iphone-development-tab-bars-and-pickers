@@ -9,7 +9,7 @@
 #import "DatePickerViewController.h"
 
 @interface DatePickerViewController ()
-
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @end
 
 @implementation DatePickerViewController
@@ -22,6 +22,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonPressed:(UIButton *)sender {
+    NSDate* date = self.datePicker.date;
+    NSString* message = [NSString stringWithFormat:@"The date and time you selected is %@",date];
+    UIAlertController* alert = [UIAlertController       alertControllerWithTitle:@"Date and Time Selected" message:message preferredStyle:UIAlertControllerStyleAlert
+                                ];
+    UIAlertAction* action = [UIAlertAction actionWithTitle:@"What a great date!" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /*
