@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSDate* currentDate = [NSDate date];
+    [self.datePicker setDate:currentDate];
 }
 
 - (void)didReceiveMemoryWarning {
