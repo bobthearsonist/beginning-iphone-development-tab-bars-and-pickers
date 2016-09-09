@@ -25,13 +25,11 @@
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender {
-    NSDate* date = self.datePicker.date;
-    NSString* message = [NSString stringWithFormat:@"The date and time you selected is %@",date];
-    UIAlertController* alert = [UIAlertController       alertControllerWithTitle:@"Date and Time Selected" message:message preferredStyle:UIAlertControllerStyleAlert
-                                ];
-    UIAlertAction* action = [UIAlertAction actionWithTitle:@"What a great date!" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:action];
-    [self presentViewController:alert animated:YES completion:nil];
+    NSString* alertMessage = [NSString stringWithFormat:@"The date and time you selected is %@",self.datePicker.date];
+    UIAlertController* datePicked = [UIAlertController       alertControllerWithTitle:@"Date and Time Selected" message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* confirmationAction = [UIAlertAction actionWithTitle:@"What a great date!" style:UIAlertActionStyleDefault handler:nil];
+    [datePicked addAction:confirmationAction];
+    [self presentViewController:datePicked animated:YES completion:nil];
 }
 
 /*
