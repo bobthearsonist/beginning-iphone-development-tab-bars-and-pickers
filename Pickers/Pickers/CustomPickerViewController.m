@@ -9,7 +9,9 @@
 #import "CustomPickerViewController.h"
 
 @interface CustomPickerViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *winLabel;
+@property (weak, nonatomic) IBOutlet UIPickerView *customPicker;
+@property (strong,nonatomic) NSArray* images;
 @end
 
 @implementation CustomPickerViewController
@@ -22,6 +24,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)spin:(UIButton *)sender {
 }
 
 /*

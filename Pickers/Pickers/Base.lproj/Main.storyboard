@@ -168,9 +168,45 @@
                     <view key="view" contentMode="scaleToFill" id="VEV-dz-GCR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5I-I7-SG1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PUJ-az-PEm" id="rdg-a3-19G"/>
+                                    <outlet property="delegate" destination="PUJ-az-PEm" id="vsq-cE-qwW"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j02-gD-ahe">
+                                <rect key="frame" x="279" y="224" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euU-cn-pme">
+                                <rect key="frame" x="285" y="253" width="31" height="30"/>
+                                <state key="normal" title="Spin"/>
+                                <connections>
+                                    <action selector="spin:" destination="PUJ-az-PEm" eventType="touchUpInside" id="pCg-oI-L9d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j02-gD-ahe" firstAttribute="top" secondItem="g5I-I7-SG1" secondAttribute="bottom" constant="8" id="71Q-VH-s7T"/>
+                            <constraint firstItem="g5I-I7-SG1" firstAttribute="centerX" secondItem="VEV-dz-GCR" secondAttribute="centerX" id="BPF-Ky-8fj"/>
+                            <constraint firstItem="euU-cn-pme" firstAttribute="top" secondItem="j02-gD-ahe" secondAttribute="bottom" constant="8" id="IZb-eo-lOc"/>
+                            <constraint firstItem="g5I-I7-SG1" firstAttribute="leading" secondItem="VEV-dz-GCR" secondAttribute="leading" id="J3w-br-t7v"/>
+                            <constraint firstItem="euU-cn-pme" firstAttribute="centerX" secondItem="VEV-dz-GCR" secondAttribute="centerX" id="RGA-5A-THw"/>
+                            <constraint firstAttribute="trailing" secondItem="g5I-I7-SG1" secondAttribute="trailing" id="YyG-M0-tyj"/>
+                            <constraint firstItem="g5I-I7-SG1" firstAttribute="top" secondItem="VEV-dz-GCR" secondAttribute="top" id="aVd-RK-lEL"/>
+                            <constraint firstItem="j02-gD-ahe" firstAttribute="centerX" secondItem="VEV-dz-GCR" secondAttribute="centerX" id="bWH-wq-Vql"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Custom" image="toolicon" id="ciw-e7-eBR"/>
+                    <connections>
+                        <outlet property="customPicker" destination="g5I-I7-SG1" id="Z2p-11-WQ1"/>
+                        <outlet property="winLabel" destination="j02-gD-ahe" id="RV5-po-bbM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLU-Qu-qBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
