@@ -11,7 +11,7 @@
 enum Pickers {Sandwich=0,Bread=1};
 
 @interface DoubleComponentPickerViewController ()
-@property (strong, nonatomic) IBOutlet UIPickerView *doublePicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *doublePicker;
 @property (strong, nonatomic) NSArray *sandwiches;
 @property (strong, nonatomic) NSArray* breads;
 @end
