@@ -122,9 +122,27 @@
                     <view key="view" contentMode="scaleToFill" id="q1Q-57-Hhl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ieg-bQ-sMu">
+                                <rect key="frame" x="20" y="20" width="560" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ARs-96-t3X" id="JIp-dW-jnh"/>
+                                    <outlet property="delegate" destination="ARs-96-t3X" id="YSG-53-Y3C"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ieg-bQ-sMu" secondAttribute="trailing" id="06S-cu-Mq1"/>
+                            <constraint firstItem="Ieg-bQ-sMu" firstAttribute="centerX" secondItem="q1Q-57-Hhl" secondAttribute="centerX" id="4bR-aV-P1R"/>
+                            <constraint firstItem="Ieg-bQ-sMu" firstAttribute="top" secondItem="10W-hU-CFg" secondAttribute="bottom" id="hgB-27-uNU"/>
+                            <constraint firstItem="Ieg-bQ-sMu" firstAttribute="leading" secondItem="q1Q-57-Hhl" secondAttribute="leadingMargin" id="lqe-Om-wvs"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dependant" image="dependenticon" id="Qqu-UA-pZ1"/>
+                    <connections>
+                        <outlet property="dependantPicker" destination="Ieg-bQ-sMu" id="Ira-PT-PX8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNz-Pw-5rq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

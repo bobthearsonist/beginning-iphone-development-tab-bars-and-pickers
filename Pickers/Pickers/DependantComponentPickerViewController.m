@@ -8,8 +8,13 @@
 
 #import "DependantComponentPickerViewController.h"
 
-@interface DependantComponentPickerViewController ()
+enum Pickers {State=0,Zip=1};
 
+@interface DependantComponentPickerViewController ()
+@property (strong,nonatomic) NSDictionary* stateZips;
+@property (strong,nonatomic) NSArray* states;
+@property (strong,nonatomic) NSArray* zips;
+@property (weak, nonatomic) IBOutlet UIPickerView *dependantPicker;
 @end
 
 @implementation DependantComponentPickerViewController
