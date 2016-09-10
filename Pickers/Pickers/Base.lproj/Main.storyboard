@@ -16,9 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="WW6-G5-F6L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAb-2E-Dks">
+                                <rect key="frame" x="0.0" y="20" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dPw-dG-0yd" id="g1E-np-D5f"/>
+                                    <outlet property="delegate" destination="dPw-dG-0yd" id="KG5-Li-Phy"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-IA-4e6">
+                                <rect key="frame" x="278" y="244" width="44" height="30"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="dPw-dG-0yd" eventType="touchUpInside" id="tHK-IQ-fJP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gAb-2E-Dks" secondAttribute="trailing" id="5kD-BH-4NH"/>
+                            <constraint firstItem="EQx-IA-4e6" firstAttribute="top" secondItem="gAb-2E-Dks" secondAttribute="bottom" constant="8" id="Bzs-MI-O2c"/>
+                            <constraint firstItem="gAb-2E-Dks" firstAttribute="top" secondItem="uwX-1M-8Sj" secondAttribute="bottom" id="Lx6-fm-TFF"/>
+                            <constraint firstItem="gAb-2E-Dks" firstAttribute="centerX" secondItem="WW6-G5-F6L" secondAttribute="centerX" id="aCh-Gd-FE8"/>
+                            <constraint firstItem="gAb-2E-Dks" firstAttribute="leading" secondItem="WW6-G5-F6L" secondAttribute="leading" id="cyt-Qj-p3S"/>
+                            <constraint firstItem="EQx-IA-4e6" firstAttribute="centerX" secondItem="WW6-G5-F6L" secondAttribute="centerX" id="lEU-OC-9M9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Single" image="singleicon" id="fOk-Is-h5H"/>
+                    <connections>
+                        <outlet property="pickerValue" destination="gAb-2E-Dks" id="bfC-z8-MMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zW-Kd-gXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
