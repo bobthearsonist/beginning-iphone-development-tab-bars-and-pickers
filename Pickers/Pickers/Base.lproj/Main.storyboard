@@ -130,11 +130,20 @@
                                     <outlet property="delegate" destination="ARs-96-t3X" id="YSG-53-Y3C"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jm-Oh-2cL">
+                                <rect key="frame" x="277" y="255" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="ARs-96-t3X" eventType="touchUpInside" id="3Iy-4o-RNg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Ieg-bQ-sMu" secondAttribute="trailing" id="06S-cu-Mq1"/>
+                            <constraint firstItem="0Jm-Oh-2cL" firstAttribute="centerX" secondItem="q1Q-57-Hhl" secondAttribute="centerX" id="1ea-Wv-7d4"/>
                             <constraint firstItem="Ieg-bQ-sMu" firstAttribute="centerX" secondItem="q1Q-57-Hhl" secondAttribute="centerX" id="4bR-aV-P1R"/>
+                            <constraint firstItem="0Jm-Oh-2cL" firstAttribute="top" secondItem="Ieg-bQ-sMu" secondAttribute="bottom" constant="19" id="cwX-IG-5iY"/>
                             <constraint firstItem="Ieg-bQ-sMu" firstAttribute="top" secondItem="10W-hU-CFg" secondAttribute="bottom" id="hgB-27-uNU"/>
                             <constraint firstItem="Ieg-bQ-sMu" firstAttribute="leading" secondItem="q1Q-57-Hhl" secondAttribute="leadingMargin" id="lqe-Om-wvs"/>
                         </constraints>
