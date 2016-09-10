@@ -91,6 +91,18 @@ enum Pickers {State=0,Zip=1};
         [self.dependantPicker selectRow:0 inComponent:Zip animated:YES];
     }
 }
+-(CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    CGFloat pickerWidth = pickerView.bounds.size.width;
+    if(component == Zip)
+    {
+        return pickerWidth/3;
+    }
+    else
+    {
+        return 2 * (pickerWidth/3);
+    }
+}
 
 /*
 #pragma mark - Navigation
