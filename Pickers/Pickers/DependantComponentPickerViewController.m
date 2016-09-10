@@ -70,6 +70,18 @@ enum Pickers {State=0,Zip=1};
     }
 }
 
+#pragma mark Picker Delegate Methods
+-(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    switch (component) {
+        case State:
+            return self.states[row];
+        case Zip:
+            return self.zips[row];
+        default:
+            return @"Error";
+    }
+}
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if(component == State)
