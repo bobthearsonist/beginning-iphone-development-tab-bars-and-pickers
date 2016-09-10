@@ -11,10 +11,8 @@
 enum Pickers {Sandwich=0,Bread=1};
 
 @interface DoubleComponentPickerViewController ()
-@property (weak, nonatomic) IBOutlet UIPickerView *sandwichPicker;
+@property (strong, nonatomic) IBOutlet UIPickerView *doublePicker;
 @property (strong, nonatomic) NSArray *sandwiches;
-
-@property (weak, nonatomic) IBOutlet UIPickerView *breadPicker;
 @property (strong, nonatomic) NSArray* breads;
 @end
 
@@ -33,8 +31,8 @@ enum Pickers {Sandwich=0,Bread=1};
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender {
-    NSString* selectedSandwich = self.sandwiches[[self.sandwichPicker selectedRowInComponent:0]];
-    NSString* selectedBread = self.breads[[self.breadPicker selectedRowInComponent:0]];
+    NSString* selectedSandwich = self.sandwiches[[self.doublePicker selectedRowInComponent:Sandwich]];
+    NSString* selectedBread = self.breads[[self.doublePicker selectedRowInComponent:Bread]];
     
     UIAlertController* halAlert = [UIAlertController alertControllerWithTitle:@"Sorry." message:@"I am afraid I cant do that." preferredStyle:UIAlertControllerStyleAlert];
     
@@ -57,7 +55,7 @@ enum Pickers {Sandwich=0,Bread=1};
 #pragma mark Picker Data Source Methods
 - (NSInteger) numberOfComponentsInPickerView:( UIPickerView *) pickerView
 {
-    return 1;
+    return 2;
 }
 - (NSInteger) pickerView:( UIPickerView *) pickerView numberOfRowsInComponent:( NSInteger) component
 {
@@ -65,12 +63,10 @@ enum Pickers {Sandwich=0,Bread=1};
         case Sandwich:
         {
             return [self.sandwiches count];
-            break;
         }
         case Bread:
         {
             return [self.breads count];
-            break;
         }
         default:
             return 0;
@@ -84,12 +80,10 @@ enum Pickers {Sandwich=0,Bread=1};
         case Sandwich:
         {
             return self.sandwiches[row];
-            break;
         }
         case Bread:
         {
             return self.breads[row];
-            break;
         }
         default:
             return 0;
