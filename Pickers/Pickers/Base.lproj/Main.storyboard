@@ -45,7 +45,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Single" image="singleicon" id="fOk-Is-h5H"/>
                     <connections>
-                        <outlet property="pickerValue" destination="gAb-2E-Dks" id="bfC-z8-MMK"/>
+                        <outlet property="singlePicker" destination="gAb-2E-Dks" id="gCP-YW-W9j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zW-Kd-gXc" userLabel="First Responder" sceneMemberID="firstResponder"/>

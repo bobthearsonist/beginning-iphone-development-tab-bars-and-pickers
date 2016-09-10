@@ -9,7 +9,7 @@
 #import "SingleComponentPickerViewController.h"
 
 @interface SingleComponentPickerViewController ()
-@property (weak, nonatomic) IBOutlet UIPickerView *singlePicker;
+@property (strong, nonatomic) IBOutlet UIPickerView *singlePicker;
 @property (strong,nonatomic) NSArray *characterNames;
 @end
 
