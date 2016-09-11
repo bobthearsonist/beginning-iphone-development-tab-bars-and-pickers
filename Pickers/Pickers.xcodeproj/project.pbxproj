@@ -21,6 +21,8 @@
 		84846F181D82F52500160710 /* DoubleComponentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84846F171D82F52500160710 /* DoubleComponentPickerViewController.m */; };
 		84846F1B1D82F56100160710 /* DependantComponentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84846F1A1D82F56100160710 /* DependantComponentPickerViewController.m */; };
 		84846F1E1D82F57900160710 /* CustomPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84846F1D1D82F57900160710 /* CustomPickerViewController.m */; };
+		84F3445A1D860F470018C918 /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F344581D860F470018C918 /* crunch.wav */; };
+		84F3445B1D860F470018C918 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F344591D860F470018C918 /* win.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		84846F1A1D82F56100160710 /* DependantComponentPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependantComponentPickerViewController.m; sourceTree = "<group>"; };
 		84846F1C1D82F57900160710 /* CustomPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerViewController.h; sourceTree = "<group>"; };
 		84846F1D1D82F57900160710 /* CustomPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerViewController.m; sourceTree = "<group>"; };
+		84F344581D860F470018C918 /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
+		84F344591D860F470018C918 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 		84846EDC1D82F43E00160710 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				84F344581D860F470018C918 /* crunch.wav */,
+				84F344591D860F470018C918 /* win.wav */,
 				8401E66C1D847B8200E7ED03 /* statedictionary.plist */,
 				84846EE01D82F43E00160710 /* AppDelegate.h */,
 				84846EE11D82F43E00160710 /* AppDelegate.m */,
@@ -279,8 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F3445A1D860F470018C918 /* crunch.wav in Resources */,
 				84846EED1D82F43E00160710 /* LaunchScreen.storyboard in Resources */,
 				84846EEA1D82F43E00160710 /* Assets.xcassets in Resources */,
+				84F3445B1D860F470018C918 /* win.wav in Resources */,
 				8401E66D1D847B8200E7ED03 /* statedictionary.plist in Resources */,
 				84846EE81D82F43E00160710 /* Main.storyboard in Resources */,
 			);

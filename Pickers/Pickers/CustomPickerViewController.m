@@ -6,14 +6,18 @@
 //  Copyright © 2016 Apress. All rights reserved.
 //
 
+#import <AudioToolbox/AudioToolbox.h>
 #import "CustomPickerViewController.h"
 
 NSString *EmptyLabel =  @" ";
 
 @interface CustomPickerViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UILabel *winLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *customPicker;
 @property (strong,nonatomic) NSArray* images;
+@property (assign,nonatomic) SystemSoundID winSoundID;
+@property (assign,nonatomic) SystemSoundID crunchSoundID;
 @end
 
 @implementation CustomPickerViewController
@@ -54,7 +58,39 @@ NSString *EmptyLabel =  @" ";
         }
     }
     
-    self.winLabel.text = (win) ? @" WINNER!": EmptyLabel;
+    if (_crunchSoundID == 0)
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"crunch" ofType:@"wav"];
+        NSURL *soundURL = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, &_crunchSoundID);
+    }
+    
+    AudioServicesPlaySystemSound(_crunchSoundID);
+    if (win)
+    {
+        [self performSelector:@selector(playWinSound) withObject:nil afterDelay:.5];
+    }
+    else
+    {
+        [self performSelector:@selector(showButton) withObject:nil afterDelay:.5];
+    }
+    self.button.hidden = YES;
+    self.winLabel.text = EmptyLabel;
+}
+
+-(void)showButton{
+    self.button.hidden = NO;
+}
+
+-(void) playWinSound{
+    if (_winSoundID == 0)
+    {
+        NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"win" withExtension:@"wav"];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, &_winSoundID);
+    }
+    AudioServicesPlaySystemSound(_winSoundID);
+    self.winLabel.text = @"WINNER!";
+    [self performSelector:@selector(showButton) withObject:nil afterDelay: 1.5];
 }
 
 #pragma mark -
